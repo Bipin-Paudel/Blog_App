@@ -6,5 +6,10 @@ class Post(models.Model):
     slug = models.SlugField()
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created_at',)
     
+    def __str__(self):
+        return self.title 
 
